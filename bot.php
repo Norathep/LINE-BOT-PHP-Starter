@@ -16,6 +16,11 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
+			$array = array(
+		        	"type" => "postback",
+			    	"label" => "Buy",
+				"uri" => "https://dry-dawn-14913.herokuapp.com/screen.jpg",
+			);
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
@@ -25,11 +30,7 @@ if (!is_null($events['events'])) {
 					'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg'
 					'title' => 'Menu'
 					'text' => 'Please select',
-					'actions' => [
-						{'type' => 'postback',
-            					 'label' => 'Buy',
-            					 'data' => 'action=buy&itemid=123'
-          					}
+					'actions' => [$array],
 						     ]
 						]
 					]
