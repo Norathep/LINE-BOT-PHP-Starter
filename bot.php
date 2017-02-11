@@ -18,8 +18,8 @@ if (!is_null($events['events'])) {
 		
 			$act = array
   				(
-  				array('type' => 'message','label' => 'Buy', 'test' => 'Yess'),
- 				array('type' => 'message','label' => 'Sell', 'test' => 'Noo'),
+  				array('type' => 'message', 'label' => 'Buy', 'text' => 'Yess'),
+ 				array('type' => 'message', 'label' => 'Sell', 'text' => 'Noo'),
   				);
 			$template = array( 
 				'type' => 'buttons',
