@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			$array = array(
-		        	'type' => 'postback',
+		        	'type' => 'uri',
 			    	'label' => 'Buy',
 				'uri' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
 			);
