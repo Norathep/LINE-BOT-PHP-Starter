@@ -16,11 +16,25 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		
+			$messages1 = [
+				'type' => 'text',
+				'label' => 'Buy',
+				'text' => 'Yes',
+			];
+				
+			
+			$messages2 = [
+				'type' => 'text',
+				'label' => 'Sell',
+				'text' => 'No',
+			];
+				
 			$act = array
   				(
-  				array('type' => 'message', 'label' => 'Buy', 'text' => 'Yess'),
- 				array('type' => 'message', 'label' => 'Sell', 'text' => 'Noo'),
+  				[$message1],
+				[$message2],
   				);
+				
 			$template = array( 
 				'type' => 'buttons',
 				//'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
