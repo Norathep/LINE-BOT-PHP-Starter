@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-			}
+			} else {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -72,6 +72,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
+			}
 		}
 	}
 }
