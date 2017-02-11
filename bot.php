@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 					'title' => 'Menu'
 					'text' => 'Please select',
 					'actions' => [$array],
-						     ]
+						     
 						]
 					]
 
