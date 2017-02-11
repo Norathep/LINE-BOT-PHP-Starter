@@ -10,7 +10,7 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			$me = 'Bank';
+			//$me = 'Bank';
 			if ($event['message']['text'] == 'stock') {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
