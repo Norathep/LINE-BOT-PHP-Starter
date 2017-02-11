@@ -21,19 +21,20 @@ if (!is_null($events['events'])) {
 			    	"label" => "Buy",
 				"uri" => "https://dry-dawn-14913.herokuapp.com/screen.jpg",
 			);
+		
+			$template = array( 
+				"type" => "buttons",
+				"thumbnailImageUrl" => 'https://dry-dawn-14913.herokuapp.com/screen.jpg",
+				"title" => "Menu",
+				"text" => "Please select",
+				"actions" => [$array],
+			);
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
 				'altText' => 'Which factor that you interest'
-				'template' => [
- 					'type' => 'buttons',
-					'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg'
-					'title' => 'Menu'
-					'text' => 'Please select',
-					'actions' => [$array],
-						     
-						]
-					]
+				'template' => [$template];
+					];
 
 
 
