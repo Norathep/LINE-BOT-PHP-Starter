@@ -1,6 +1,6 @@
 <?php
 $access_token = 'phaEYrdmtLGy30cBJkK2zB9eke3JLwcgU0KSMRuII1f/c/2Ml8NxvxdXY0Z7BElsVR3CJOvbGeebyiBFtiFnzML4e14AA+aN88GeTdYCnLvjRLMrY+oWP5FoPyjeHSKau+s1NNv7gRRYQGzVFwwx2AdB04t89/1O/w1cDnyilFU=';
-$me = 'Bank'
+$me = 'Bank';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-			$me = [$result]
+			$me = [$result];
 			echo $result . "\r\n";
 			} else {
 				
@@ -105,6 +105,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n"; }
+
 		}
 	}
 }
