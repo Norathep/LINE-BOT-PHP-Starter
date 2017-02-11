@@ -15,20 +15,20 @@ if (!is_null($events['events'])) {
 			if ($event['message']['text'] == 'stock') {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
-			$array = array(
-		        	'type' => 'message',
-			    	'label' => 'Buy',
-				'test' => 'Yesss',
-			);
 		
-			
+			$act = array
+  				(
+  				array('type' => 'message','label' => 'Buy', 'test' => 'Yess'),
+ 				array('type' => 'message','label' => 'Sell', 'test' => 'Noo'),
+  				);
 			$template = array( 
 				'type' => 'buttons',
 				//'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
 				'title' => 'Menu',
 				'text' => 'Please select',
-				'actions' => [$array]
+				'actions' => [$act],
+				
+
 			);
 
 			// Build message to reply back
