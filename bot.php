@@ -18,9 +18,23 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				'type' => 'text',
-				'text' => 'aav'
-			];
+				'type' => 'template',
+				'altText' => 'Which factor that you interest'
+				'template' => [
+ 					'type' => 'buttons',
+					'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg'
+					'title' => 'Menu'
+					'text' => 'Please select',
+					'actions' => [
+						{'type' => 'postback',
+            					 'label' => 'Buy',
+            					 'data' => 'action=buy&itemid=123'
+          					}
+						     ]
+						]
+					]
+
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -41,7 +55,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-			} else {
+			}
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -72,7 +86,6 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 
 			echo $result . "\r\n";
-			}
 		}
 	}
 }
