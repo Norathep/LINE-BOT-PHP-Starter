@@ -66,6 +66,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			echo $result . "\r\n";
 			}
+			
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
