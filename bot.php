@@ -17,15 +17,15 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			$array = array(
-		        	'type' => 'uri',
+		        	'type' => 'message',
 			    	'label' => 'Buy',
-				'uri' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
+				'test' => 'Yesss',
 			);
 		
 			
 			$template = array( 
 				'type' => 'buttons',
-				'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
+				//'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
 				'title' => 'Menu',
 				'text' => 'Please select',
 				'actions' => [$array]
