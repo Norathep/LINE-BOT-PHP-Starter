@@ -17,24 +17,26 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			$array = array(
-		        	"type" => "postback",
-			    	"label" => "Buy",
-				"uri" => "https://dry-dawn-14913.herokuapp.com/screen.jpg",
+		        	'type' => 'postback',
+			    	'label' => 'Buy',
+				'uri' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
 			);
 		
+			
 			$template = array( 
-				"type" => "buttons",
-				"thumbnailImageUrl" => 'https://dry-dawn-14913.herokuapp.com/screen.jpg",
-				"title" => "Menu",
-				"text" => "Please select",
-				"actions" => [$array],
+				'type' => 'buttons',
+				'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
+				'title' => 'Menu',
+				'text' => 'Please select',
+				'actions' => [$array]
 			);
+
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
-				'altText' => 'Which factor that you interest'
-				'template' => [$template];
-					];
+				'altText' => 'Which factor that you interest',
+				'template' => [$template],
+			];
 
 
 
