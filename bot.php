@@ -16,14 +16,14 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 		
-			$messages1 = [
+			$msg1 = [
 				'type' => 'text',
 				'label' => 'Buy',
 				'text' => 'Yes',
 			];
 				
 			
-			$messages2 = [
+			$msg2 = [
 				'type' => 'text',
 				'label' => 'Sell',
 				'text' => 'No',
@@ -31,8 +31,8 @@ if (!is_null($events['events'])) {
 				
 			$act = array
   				(
-  				[$message1],
-				[$message2],
+  				[$msg1],
+				[$msg2],
   				);
 				
 			$template = array( 
