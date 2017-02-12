@@ -29,20 +29,19 @@ if (!is_null($events['events'])) {
 				'text' => 'No',
 			];
 				
-			$act = array
-  				(
+			$act = [
   				[$msg1],
 				[$msg2],
-  				);
+  				];
 				
-			$template = array( 
+			$template = [
 				'type' => 'buttons',
 				//'thumbnailImageUrl' => 'https://dry-dawn-14913.herokuapp.com/screen.jpg',
 				'title' => 'Menu',
 				'text' => 'Please select',
 				'actions' => [$act],
 				
-			);
+			];
 			// Build message to reply back
 			$messages = [
 				'type' => 'template',
