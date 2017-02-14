@@ -17,14 +17,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 		
 			$msg1 = [
-				'type' => 'text',
+				'type' => 'message',
 				'label' => 'Buy',
 				'text' => 'Yes',
 			];
 				
 			
 			$msg2 = [
-				'type' => 'text',
+				'type' => 'message',
 				'label' => 'Sell',
 				'text' => 'No',
 			];
@@ -66,7 +66,7 @@ if (!is_null($events['events'])) {
 			$me = $result;
 			curl_close($ch);
 			echo $result . "\r\n";
-			}
+			}else {
 			
 			// Get text sent
 			$text = $event['message']['text'];
@@ -94,6 +94,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			echo $result . "\r\n";
+			}
 		}
 	}
 }
