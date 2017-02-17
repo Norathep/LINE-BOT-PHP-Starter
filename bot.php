@@ -4,6 +4,15 @@ $me = 'bank';
 print "Hello world!"; 
 echo "Hello world"; 
 fwrite(STDOUT, 'foo');
+
+echo "OK";	
+$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$txt = "John Doe\n";
+fwrite($myfile, $txt);
+$txt = "Jane Doe\n";
+fwrite($myfile, $txt);
+fclose($myfile);
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
