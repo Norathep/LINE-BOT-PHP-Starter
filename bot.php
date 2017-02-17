@@ -4,6 +4,7 @@ $me = 'bank';
 print "Hello world!"; 
 echo "Hello world"; 
 fwrite(STDOUT, 'foo');
+error_log("hello, this is a test!");
 
 echo "OK";	
 $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
