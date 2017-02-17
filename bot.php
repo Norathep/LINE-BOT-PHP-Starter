@@ -101,6 +101,10 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 			}
 		}
+		else if ($event['type'] == 'join') {
+			error_log('JOIN Event type : ' + $event['source']['type']);
+			error_log('GroupId : ' + $event['source']['groupId']);
+		}
 	}
 }
 
