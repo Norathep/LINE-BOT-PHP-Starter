@@ -1,18 +1,8 @@
 <?php
 $access_token = 'phaEYrdmtLGy30cBJkK2zB9eke3JLwcgU0KSMRuII1f/c/2Ml8NxvxdXY0Z7BElsVR3CJOvbGeebyiBFtiFnzML4e14AA+aN88GeTdYCnLvjRLMrY+oWP5FoPyjeHSKau+s1NNv7gRRYQGzVFwwx2AdB04t89/1O/w1cDnyilFU=';
 $me = 'bank';
-print "Hello world!"; 
-echo "Hello world"; 
-fwrite(STDOUT, 'foo');
 error_log("hello, this is a test!");
-
-echo "OK";	
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-$txt = "John Doe\n";
-fwrite($myfile, $txt);
-$txt = "Jane Doe\n";
-fwrite($myfile, $txt);
-fclose($myfile);
+error_log("ทดสอบ");
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -82,7 +72,8 @@ if (!is_null($events['events'])) {
 			}else {
 			
 			// Get text sent
-			$text = $event['source']['userId'];
+			//$text = $event['source']['userId'];
+			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
@@ -114,9 +105,3 @@ if (!is_null($events['events'])) {
 }
 
 echo "OK";	
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-$txt = "John Doe\n";
-fwrite($myfile, $txt);
-$txt = "Jane Doe\n";
-fwrite($myfile, $txt);
-fclose($myfile);
