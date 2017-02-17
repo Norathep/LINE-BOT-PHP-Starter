@@ -1,8 +1,6 @@
 <?php
 $access_token = 'phaEYrdmtLGy30cBJkK2zB9eke3JLwcgU0KSMRuII1f/c/2Ml8NxvxdXY0Z7BElsVR3CJOvbGeebyiBFtiFnzML4e14AA+aN88GeTdYCnLvjRLMrY+oWP5FoPyjeHSKau+s1NNv7gRRYQGzVFwwx2AdB04t89/1O/w1cDnyilFU=';
 $me = 'bank';
-error_log("hello, this is a test!");
-error_log("ทดสอบ");
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -69,7 +67,7 @@ if (!is_null($events['events'])) {
 			$me = $result;
 			curl_close($ch);
 			echo $result . "\r\n";
-			}else {
+			} else {
 			
 			// Get text sent
 			//$text = $event['source']['userId'];
@@ -81,13 +79,23 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 			];
-				print "$text"; 
+				
+				if ($event['source']['type'] == "group")    
+				{ 
+				    error_log("Sniff GID : {$event['source']['groupId']} \t Text : {$event['message']['text']}");
+				}
+				else if ($event['source']['type'] == "room") 
+				{
+				    error_log("Sniff GID : {$event['source']['roomId']} \t Text : {$event['message']['text']}");
+				}
+			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
+			/* // SILENT MODE
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
@@ -98,6 +106,7 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
+			*/
 			echo $result . "\r\n";
 			}
 		}
