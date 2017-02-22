@@ -10,6 +10,27 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		
+		// === Sniff image send in group === //
+		if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
+			if ($event['source']['type'] == "group")    
+				{
+				    $dumpObj = print_r($event,true);
+				    error_log("===== DUMP IMAGE =====");
+				    error_log("$dumpObj");
+				    error_log("======================");
+				    error_log("Sniff GID : {$event['source']['groupId']} \t Text : {$event['message']['text']}");
+				}
+				else if ($event['source']['type'] == "room") 
+				{
+				    $dumpObj = print_r($event,true);
+				    error_log("===== DUMP IMAGE =====");
+				    error_log("$dumpObj");
+				    error_log("======================");
+				    error_log("Sniff GID : {$event['source']['roomId']} \t Text : {$event['message']['text']}");
+				}
+		}
+		
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
